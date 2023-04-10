@@ -17,49 +17,167 @@ def calcualte_unit():
         messagebox.showerror(title="ERROR!",message="Please enter an integer or float.")
     else :
 
-        # Centimeter to another
-        if unit_from == 'Centimeter':
+        # Milimeter to another
+        if unit_from == 'Milimeter':
 
-            if unit_to == 'Centimeter':
+            if unit_to == 'Milimeter':
+                result = value_from
+            elif unit_to == 'Centimeter':
+                result = value_from / 10
+            elif unit_to == 'Meter':
+                result = value_from / 1000 
+            elif unit_to == 'Kilometer':
+                result = value_from / 1000000
+            elif unit_to == 'Mile':
+                result = value_from / 1609000
+            elif unit_to == 'Yard':
+                result = value_from / 914.4
+            elif unit_to == 'Inch':
+                result = value_from / 25.4
+            elif unit_to == 'Foot':
+                result = value_from / 304.8
+
+        # Centimeter to another
+        elif unit_from == 'Centimeter':
+
+            if unit_to == 'Milimeter':
+                result = value_from
+            elif unit_to == 'Centimeter':
                 result = value_from
             elif unit_to == 'Meter':
                 result = value_from / 100
             elif unit_to == 'Kilometer':
                 result = value_from / 100000
             elif unit_to == 'Mile':
-                result = value_from * 0.00000621371
+                result = value_from / 160900
             elif unit_to == 'Yard':
-                result = value_from * 0.109361
+                result = value_from / 91.44
+            elif unit_to == 'Inch':
+                result = value_from / 2.54
+            elif unit_to == 'Foot':
+                result = value_from / 30.48
 
         # Meter to enother
         elif unit_from == 'Meter':
 
-            if unit_to == 'Centimeter':
+            if unit_to == 'Milimeter':
+                result = value_from * 1000
+            elif unit_to == 'Centimeter':
                 result = value_from * 100
             elif unit_to == 'Meter':
                 result = value_from
             elif unit_to == 'Kilometer':
                 result = value_from / 1000
             elif unit_to == 'Mile':
-                result = value_from * 0.000621371
+                result = value_from / 1609
             elif unit_to == 'Yard':
-                result = value_from * 1.09361
+                result = value_from / 0.9144
+            elif unit_to == 'Inch':
+                result = value_from / 0.0254
+            elif unit_to == 'Foot':
+                result = value_from / 0.3048
 
         # Kilometer to another
         elif unit_from == 'Kilometer':
 
-            if unit_to == 'Centimeter':
+            if unit_to == 'Milimeter':
+                result = value_from * 1000000
+            elif unit_to == 'Centimeter':
                 result = value_from * 100000
             elif unit_to == 'Meter':
                 result = value_from * 1000
             elif unit_to == 'Kilometer':
                 result = value_from    
             elif unit_to == 'Mile':
-                result = value_from * 0.621371
+                result = value_from / 1.609
             elif unit_to == 'Yard':
-                result = value_from * 1093.61
+                result = value_from / 0.0009144
+            elif unit_to == 'Inch':
+                result = value_from / 0.0000254
+            elif unit_to == 'Foot':
+                result = value_from / 0.0003048
 
-        # Display result
+        # Mile to another
+        elif unit_from == 'Mile':
+
+            if unit_to == 'Milimeter':
+                result = value_from * 1609000
+            elif unit_to == 'Centimeter':
+                result = value_from * 160900
+            elif unit_to == 'Meter':
+                result = value_from * 1609
+            elif unit_to == 'Kilometer':
+                result = value_from * 1.609
+            elif unit_to == 'Mile':
+                result = value_from
+            elif unit_to == 'Yard':
+                result = value_from * 1760
+            elif unit_to == 'Inch':
+                result = value_from * 63360
+            elif unit_to == 'Foot':
+                result = value_from * 5280
+
+        # Yard to another
+        elif unit_from == 'Yard':
+
+            if unit_to == 'Milimeter':
+                result = value_from * 914.4
+            elif unit_to == 'Centimeter':
+                result = value_from * 91.44
+            elif unit_to == 'Meter':
+                result = value_from * 0.9144
+            elif unit_to == 'Kilometer':
+                result = value_from * 0.0009144 
+            elif unit_to == 'Mile':
+                result = value_from / 1760
+            elif unit_to == 'Yard':
+                result = value_from
+            elif unit_to == 'Inch':
+                result = value_from * 36
+            elif unit_to == 'Foot':
+                result = value_from * 3
+
+        # Inch to another
+        elif unit_from == 'Inch':
+
+            if unit_to == 'Milimeter':
+                result = value_from * 25.4
+            elif unit_to == 'Centimeter':
+                result = value_from * 2.54
+            elif unit_to == 'Meter':
+                result = value_from * 0.0254
+            elif unit_to == 'Kilometer':
+                result = value_from * 0.0000254  
+            elif unit_to == 'Mile':
+                result = value_from / 63360
+            elif unit_to == 'Yard':
+                result = value_from / 36
+            elif unit_to == 'Inch':
+                result = value_from
+            elif unit_to == 'Foot':
+                result = value_from / 12
+
+        # Foot to another
+        elif unit_from == 'Foot':
+
+            if unit_to == 'Milimeter':
+                result = value_from * 304.8
+            elif unit_to == 'Centimeter':
+                result = value_from * 30.48
+            elif unit_to == 'Meter':
+                result = value_from * 0.3048
+            elif unit_to == 'Kilometer':
+                result = value_from * 0.0003048 
+            elif unit_to == 'Mile':
+                result = value_from / 5280
+            elif unit_to == 'Yard':
+                result = value_from / 3
+            elif unit_to == 'Inch':
+                result = value_from * 12
+            elif unit_to == 'Foot':
+                result = value_from
+
+        # Show result
         entry_to.delete(0,END)
         entry_to.insert(END,result)
 
@@ -96,18 +214,24 @@ list_box_from.grid(row=2,column=0)
 list_box_to.grid(row=2,column=1)
 
 # Insert to from_listbox
+list_box_from.insert(END,'Milimeter')
 list_box_from.insert(END,'Centimeter')
 list_box_from.insert(END,'Meter')
 list_box_from.insert(END,'Kilometer')
 list_box_from.insert(END,'Mile')
 list_box_from.insert(END,'Yard')
+list_box_from.insert(END,'Inch')
+list_box_from.insert(END,'Foot')
 
 # Insert to from_listbox
+list_box_to.insert(END,'Milimeter')
 list_box_to.insert(END,'Centimeter')
 list_box_to.insert(END,'Meter')
 list_box_to.insert(END,'Kilometer')
 list_box_to.insert(END,'Mile')
 list_box_to.insert(END,'Yard')
+list_box_to.insert(END,'Inch')
+list_box_to.insert(END,'Foot')
 
 # Create calculate button & grid of him
 button = Button(root,text='Calculate',font=font_1,bg='#5ec0ff',fg='#e8e6e4',activebackground='light gray',activeforeground='blue',command=calcualte_unit)
